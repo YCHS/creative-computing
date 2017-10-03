@@ -2,6 +2,7 @@ int startX = 0;
 int colorR = 255;
 int colorB = 0;
 float strokeW = 1;
+int direction = 1;
 
 void setup ()
 {
@@ -17,10 +18,14 @@ void draw ()
   
   startX = startX + 20;
   strokeW += 0.1;
-  colorR -= 1;
+  colorR -= direction * -1;
   colorB += 1;
   if (startX > width) {
     startX = 0;
   }
  
+}
+
+void mousePressed() {
+  direction = direction * -1; 
 }
